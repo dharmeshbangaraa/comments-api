@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "3522bd30-593d-48c2-9e79-4ee3d586d6c3",
+		"name": "Comments-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22132976"
+	},
+	"item": [
+		{
+			"name": "Post Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"body\": \"This is a new comment\",\n    \"username\": \"Dharmesh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v2/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all comments by username or date or both",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/comments/search?date=2024-07-20&username=Mark",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"comments",
+						"search"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-07-20"
+						},
+						{
+							"key": "username",
+							"value": "Mark"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all comments by username",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/comments?username=\"Dharmesh\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "\"Dharmesh\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update comment by username and comment Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"body\": \"Hey there - updated\",\n    \"username\": \"Dharmesh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v2/comments?username=Dharmesh&id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Dharmesh"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
